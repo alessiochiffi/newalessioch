@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/217bd3ff-be4f-45d9-8c86-26ce954471b1/deploy-status)](https://app.netlify.com/sites/wizardly-shockley-ebb04d/deploys)
