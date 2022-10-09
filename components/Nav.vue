@@ -1,7 +1,7 @@
 <template>
   <header>
     <a href="/" class="logo fade">
-      <img src="/logo.png" alt="logo alesioch.com" />
+      <img src="/logo.png" alt="logo alesioch.com" width="111" height="111" />
     </a>
   </header>
 </template>
@@ -16,6 +16,7 @@
   @media (max-width: 600px) {
     img {
       max-width: 100px;
+      height: auto;
     }
   }
 }
