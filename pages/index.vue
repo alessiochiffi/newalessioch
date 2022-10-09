@@ -23,28 +23,27 @@ watch(introLoaded, () => {
     <TextSequence
       :terms="['👋', 'hello', 'ciao', 'welcome', 'to', 'my', 'site', 'alessioch', '.com']"
     />
-    <div v-if="ui.introLoaded">
-      <div class="hero-content">
-        <h1 class="fade">Hello, I'm Alessio</h1>
-        <h2 class="fade">Senior Frontend Developer based in London - UK</h2>
-        <p class="fade">
-          Born and raised in Salento, Italy. I moved to London in 2015 right after my
-          graduation in Business Communication at La Sapienza University of Rome.
-        </p>
-        <p class="fade">
-          I wrote my first line of code in 2012, while I was working on a University tech
-          project. Since then, my passion for coding and front end development has never
-          stopped.
-        </p>
-        <p class="fade">
-          More than 6 years of commercial experience. I had the pleasure to work for
-          clients like Finisterre, Arcelormittal, Safaricom, David Beckham Eyewear, Union
-          Coffee, Tesco PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, Elite
-          Traveler and more
-        </p>
-        <p class="fade">Technology I love and use</p>
-        <TechStack />
-      </div>
+
+    <div class="hero-content">
+      <h1 class="fade">Hello, I'm Alessio</h1>
+      <h2 class="fade">Senior Frontend Developer based in London - UK</h2>
+      <p class="fade">
+        Born and raised in Salento, Italy. I moved to London in 2015 right after my
+        graduation in Business Communication at La Sapienza University of Rome.
+      </p>
+      <p class="fade">
+        I wrote my first line of code in 2012, while I was working on a University tech
+        project. Since then, my passion for coding and front end development has never
+        stopped.
+      </p>
+      <p class="fade">
+        More than 6 years of commercial experience. I had the pleasure to work for clients
+        like Finisterre, Arcelormittal, Safaricom, David Beckham Eyewear, Union Coffee,
+        Tesco PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, Elite Traveler and
+        more
+      </p>
+      <p class="fade">Technology I love and use</p>
+      <TechStack />
     </div>
   </div>
 </template>
