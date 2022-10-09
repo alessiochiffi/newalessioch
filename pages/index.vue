@@ -42,7 +42,7 @@ watch(introLoaded, () => {
         Tesco PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, Elite Traveler and
         more
       </p>
-      <p class="fade">Technology I love and use</p>
+      <p class="fade">Technology I use</p>
       <TechStack />
     </div>
   </div>
