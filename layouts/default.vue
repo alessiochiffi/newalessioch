@@ -5,14 +5,10 @@ const ui = useUiStore();
 </script>
 
 <template>
-  <div>
-    <template v-if="ui.introLoaded">
-      <Nav />
-    </template>
+  <div :class="['main', { visible: ui.introLoaded }]">
+    <Nav />
     <slot />
-    <template v-if="ui.introLoaded">
-      <Footer />
-    </template>
+    <Footer />
   </div>
 </template>
 
@@ -26,8 +22,12 @@ body {
   min-height: 100vh;
 }
 
-#magicMouseCursor {
-  border: 1px solid black !important;
+main {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
 }
 
 body {

@@ -20,6 +20,11 @@ footer {
   color: white;
   margin: 20px 0 0;
   padding: 40px 0;
+  opacity: 0;
+
+  .visible & {
+    opacity: 1;
+  }
 
   .container {
     max-width: 1200px;
