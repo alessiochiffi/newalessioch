@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useUiStore } from '@/stores/uiStore'
+import { useUiStore } from "@/stores/uiStore";
 
-const ui = useUiStore()
+const ui = useUiStore();
 </script>
 
 <template>
@@ -11,25 +11,26 @@ const ui = useUiStore()
     </template>
     <slot />
     <template v-if="ui.introLoaded">
-      <div>Footer</div>
+      <Footer />
     </template>
   </div>
 </template>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
-  html, body {
-    padding: 0;
-    margin: 0;
-    min-width: 100vw;
-    min-height: 100vh;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
 
-  #magicMouseCursor {
-    border: 1px solid black !important;
-  }
+#magicMouseCursor {
+  border: 1px solid black !important;
+}
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 </style>

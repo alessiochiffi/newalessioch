@@ -4,10 +4,13 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/color-mode',
   ],
   nitro: {
     compressPublicAssets: true,
+  },
+  components: {
+    global: true,
+    dirs: ['~/components', '~/icons']
   },
   experimental: {
     reactivityTransform: true,
@@ -15,9 +18,7 @@ export default defineNuxtConfig({
   build: {
     transpile: [
       'gsap',
+      'vanilla-tilt'
     ],
-  },
-  colorMode: {
-    classSuffix: '',
-  },
+  }
 })

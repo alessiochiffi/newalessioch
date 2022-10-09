@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { useUiStore } from '@/stores/uiStore'
 
-const props = defineProps({
-  terms: { type: Array, required: true },
-})
-const ui = useUiStore()
+const props = defineProps<{
+  terms: Array<String>
+}>()
 
+const ui = useUiStore()
 const term = ref<String>('🚀') as any
 const count = ref<Number>(0)
 const blackBg = ref<Boolean>(true)
