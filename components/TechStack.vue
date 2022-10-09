@@ -48,6 +48,8 @@ function onMouseLeave() {
 
 <style lang="scss">
 .tech-stack {
+  overflow: hidden;
+
   ul {
     list-style: none;
     padding: 0;

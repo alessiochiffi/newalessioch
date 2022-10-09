@@ -26,7 +26,6 @@ footer {
     border-bottom: 1px solid white;
     margin: 0 auto;
     padding: 0 20px 50px;
-    width: 100%;
   }
 
   .contacts {

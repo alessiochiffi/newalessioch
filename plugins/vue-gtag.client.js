@@ -4,7 +4,7 @@ import VueGtag from 'vue-gtag-next'
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(VueGtag, {
     property: {
-      id: process.env.GOOGLE_ANALYTICS_ID
+      id: 'UA-28525994-1'
     },
     appName: 'alessioch.com',
     pageTrackerScreenviewEnabled: true
