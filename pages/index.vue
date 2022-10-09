@@ -32,9 +32,9 @@ watch(introLoaded, () => {
           graduation in Business Communication at La Sapienza University of Rome.
         </p>
         <p class="fade">
-          I wrote my first line of code in 2012, meeting and working with other students
-          on a University tech project. Since then, my passion for coding and front end
-          development has never stopped.
+          I wrote my first line of code in 2012, while I was working on a University tech
+          project. Since then, my passion for coding and front end development has never
+          stopped.
         </p>
         <p class="fade">
           More than 6 years of commercial experience. I had the pleasure to work for
