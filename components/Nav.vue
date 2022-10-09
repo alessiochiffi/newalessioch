@@ -1,10 +1,7 @@
 <template>
   <header>
-    <a href="/" class="logo">
-      <img
-        src="https://www.alessioch.com/static/media/logoalessiochf.eab475a2.png"
-        alt=""
-      />
+    <a href="/" class="logo fade">
+      <img src="/logo.png" alt="logo alesioch.com" />
     </a>
   </header>
 </template>
@@ -14,6 +11,7 @@
   position: fixed;
   top: 10px;
   z-index: 9;
+  opacity: 0;
 
   @media (max-width: 600px) {
     img {

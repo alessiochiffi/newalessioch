@@ -13,13 +13,13 @@ const tech = [
   "Vite",
   "Shopify",
   "React",
+  "TS",
   "Git",
   "EsLint",
   "Webpack",
   "VsCode",
   "Bitbucket",
   "Figma",
-  "Ts",
 ];
 
 function onMouseEnter(item: String) {
