@@ -5,7 +5,7 @@ useHead({
     {
       rel: "icon",
       type: "image/png",
-      href: "/nuxt.png",
+      href: "/logo.png",
     },
   ],
 });
