@@ -1,7 +1,13 @@
 <template>
   <header>
     <a href="/" class="logo fade">
-      <img src="/logo.png" alt="logo alesioch.com" width="111" height="111" />
+      <nuxt-img
+        format="webp"
+        src="/logo.png"
+        alt="logo alesioch.com"
+        quality="100"
+        sizes="sm:100px md:111px"
+      />
     </a>
   </header>
 </template>

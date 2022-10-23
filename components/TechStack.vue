@@ -1,5 +1,25 @@
+<template>
+  <div v-if="ui.introLoaded" :class="['tech-stack', { 'is-active': selected !== '' }]">
+    <span class="tech-stack__selected">{{ selected }}</span>
+    <ul>
+      <template v-for="(item, index) in tech" :key="index">
+        <li>
+          <component
+            :is="'icon-' + item"
+            @mouseenter="onMouseEnter(item)"
+            @mouseleave="onMouseLeave()"
+          ></component>
+        </li>
+      </template>
+    </ul>
+  </div>
+</template>
+
 <script setup lang="ts">
+import { useUiStore } from "@/stores/uiStore";
 const selected = ref<String>("");
+
+const ui = useUiStore();
 
 const tech = [
   "Js",
@@ -29,22 +49,6 @@ function onMouseLeave() {
   selected.value = "";
 }
 </script>
-<template>
-  <div :class="['tech-stack', { 'is-active': selected !== '' }]">
-    <span class="tech-stack__selected">{{ selected }}</span>
-    <ul>
-      <template v-for="(item, index) in tech" :key="index">
-        <li>
-          <component
-            :is="'icon-' + item"
-            @mouseenter="onMouseEnter(item)"
-            @mouseleave="onMouseLeave()"
-          ></component>
-        </li>
-      </template>
-    </ul>
-  </div>
-</template>
 
 <style lang="scss">
 .tech-stack {

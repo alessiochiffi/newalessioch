@@ -9,7 +9,14 @@
     </div>
 
     <div class="signature">
-      <img src="/signature.png" alt="signature" loading="lazy" />
+      <nuxt-img
+        format="webp"
+        src="/signature.png"
+        alt="signature"
+        quality="100"
+        sizes="sm:180px"
+        loading="lazy"
+      />
     </div>
   </footer>
 </template>

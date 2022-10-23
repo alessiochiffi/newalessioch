@@ -1,44 +1,44 @@
-<script setup lang="ts">
-import { useUiStore } from '@/stores/uiStore'
-
-const props = defineProps<{
-  terms: Array<String>
-}>()
-
-const ui = useUiStore()
-const term = ref<String>('🚀') as any
-const count = ref<Number>(0)
-const blackBg = ref<Boolean>(true)
-const finished = ref<Boolean>(false)
-const active = ref<Boolean>(true)
-
-setTimeout(() => {
-  setInterval(() => {
-    if (count.value === 10) {
-      finished.value = true
-      ui.removeIntro()
-
-      setTimeout(() => {
-        active.value = false
-      }, 1000)
-      return
-    }
-
-    term.value = props.terms[Number(count.value)]
-
-    count.value = count.value === 9 ? (count.value = 10) : Number(count.value) + 1
-    blackBg.value = !blackBg.value
-  }, 300)
-}, 100)
-</script>
-
 <template>
-  <div v-if="active" class="hero" :class="{ 'bg-black': blackBg, 'finished': finished }">
+  <div v-if="active" class="hero" :class="{ 'bg-black': blackBg, finished: finished }">
     <div class="name" :data-text="term">
       {{ term }}
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useUiStore } from "@/stores/uiStore";
+
+const props = defineProps<{
+  terms: Array<String>;
+}>();
+
+const ui = useUiStore();
+const term = ref<String>("🚀") as any;
+const count = ref<Number>(0);
+const blackBg = ref<Boolean>(true);
+const finished = ref<Boolean>(false);
+const active = ref<Boolean>(true);
+
+setTimeout(() => {
+  setInterval(() => {
+    if (count.value === 10) {
+      finished.value = true;
+      ui.removeIntro();
+
+      setTimeout(() => {
+        active.value = false;
+      }, 1000);
+      return;
+    }
+
+    term.value = props.terms[Number(count.value)];
+
+    count.value = count.value === 9 ? (count.value = 10) : Number(count.value) + 1;
+    blackBg.value = !blackBg.value;
+  }, 300);
+}, 100);
+</script>
 
 <style lang="scss" scoped>
 /* Colors */
@@ -67,7 +67,7 @@ $orange-2: rgb(255, 136, 0);
   }
 }
 .name {
-font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
   color: $black;
   text-align: left;
@@ -140,4 +140,3 @@ font-family: 'Poppins', sans-serif;
   }
 }
 </style>
-
