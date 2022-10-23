@@ -10,15 +10,17 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@antfu/eslint-config": "^0.27.0",
     "@averjs/nuxt-compression": "^1.2.2",
     "@iconify-json/carbon": "^1.1.8",
     "@iconify-json/twemoji": "^1.1.5",
-    "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
     "@nuxtjs/color-mode": "^3.1.6",
     "@pinia/nuxt": "^0.4.2",
     "@vueuse/nuxt": "^9.3.0",
     "eslint": "^8.24.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
     "nuxt": "^3.0.0-rc.11",
     "nuxt-compress": "^5.0.0",
     "pinia": "^2.0.22",

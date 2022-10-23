@@ -1,12 +1,12 @@
 <template>
   <header>
     <a href="/" class="logo fade">
-      <nuxt-img
-        format="webp"
-        src="/logo.png"
+      <img
+        src="/logo.png?webp"
         alt="logo alesioch.com"
-        quality="100"
-        sizes="sm:100px md:111px"
+        width="111"
+        height="111"
+        loading="lazy"
       />
     </a>
   </header>

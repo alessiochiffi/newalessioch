@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@nuxt/image-edge'
+    '@aceforth/nuxt-optimized-images'
   ],
   nitro: {
     compressPublicAssets: true,
