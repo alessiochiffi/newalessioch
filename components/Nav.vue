@@ -2,7 +2,7 @@
   <header>
     <a href="/" class="logo fade">
       <img
-        src="/logo.png?webp"
+        src="/logo.webp"
         alt="logo alesioch.com"
         width="111"
         height="111"

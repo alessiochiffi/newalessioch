@@ -9,13 +9,7 @@
     </div>
 
     <div class="signature">
-      <img
-        src="/signature.png?webp"
-        alt="signature"
-        loading="lazy"
-        width="180"
-        height="71"
-      />
+      <img src="/signature.webp" alt="signature" loading="lazy" width="180" height="71" />
     </div>
   </footer>
 </template>
