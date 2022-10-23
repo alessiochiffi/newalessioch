@@ -1,6 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  ssr: true,
+  target: "static",
   modules: [
     '@vueuse/nuxt',
     '@pinia/nuxt',
