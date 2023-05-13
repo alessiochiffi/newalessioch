@@ -8,20 +8,18 @@ const { introLoaded } = storeToRefs(ui);
 const tl = gsap.timeline();
 
 watch(introLoaded, () => {
-  setTimeout(() => {
-    tl.to(".fade", {
-      y: 0,
-      opacity: 1,
-      stagger: 0.1,
-    });
-  }, 500);
+  tl.to(".fade", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.1,
+  });
 });
 </script>
 
 <template>
   <div>
     <TextSequence
-      :terms="['👋', 'hello', 'ciao', 'welcome', 'to', 'my', 'site', 'alessioch', '.com']"
+      :terms="['👋', 'ciao!', 'welcome', 'to', 'my', 'site', 'alessioch', '.com']"
     />
 
     <div class="hero-content">

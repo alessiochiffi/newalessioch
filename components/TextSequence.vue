@@ -1,9 +1,15 @@
 <template>
-  <div v-if="active" class="hero" :class="{ 'bg-black': blackBg, finished: finished }">
-    <div class="name" :data-text="term">
+  <div
+    v-if="active"
+    ref="introScreen"
+    class="introScreen"
+    :class="{ 'bg-image': !finished }"
+  >
+    <div class="word" :data-text="term">
       {{ term }}
     </div>
   </div>
+  <div v-if="!finished" ref="mask" class="mask"></div>
 </template>
 
 <script setup lang="ts">
@@ -16,15 +22,21 @@ const props = defineProps<{
 const ui = useUiStore();
 const term = ref<String>("🚀") as any;
 const count = ref<Number>(0);
-const blackBg = ref<Boolean>(true);
 const finished = ref<Boolean>(false);
 const active = ref<Boolean>(true);
+const mask = ref<HTMLElement>();
+const introScreen = ref<HTMLElement>();
 
-setTimeout(() => {
+function fadeOutIntroScreen() {
+  introScreen.value?.classList.add("fade-out");
+}
+
+function runAnimation() {
   setInterval(() => {
-    if (count.value === 10) {
-      finished.value = true;
+    if (count.value === 9) {
       ui.removeIntro();
+      finished.value = true;
+      fadeOutIntroScreen();
 
       setTimeout(() => {
         active.value = false;
@@ -33,19 +45,30 @@ setTimeout(() => {
     }
 
     term.value = props.terms[Number(count.value)];
-
-    count.value = count.value === 9 ? (count.value = 10) : Number(count.value) + 1;
-    blackBg.value = !blackBg.value;
+    count.value = count.value === 8 ? (count.value = 9) : Number(count.value) + 1;
   }, 300);
-}, 100);
+}
+
+function mouseEffect() {
+  document.addEventListener("pointermove", (pos: PointerEvent) => {
+    if (!mask.value) return;
+
+    let x = ((pos.clientX / window.innerWidth) * 100).toFixed(0);
+    let y = ((pos.clientY / window.innerHeight) * 100).toFixed(0);
+
+    mask.value.style.setProperty("--mouse-x", x + "%");
+    mask.value.style.setProperty("--mouse-y", y + "%");
+  });
+}
+
+onMounted(() => {
+  runAnimation();
+  mouseEffect();
+});
 </script>
 
 <style lang="scss" scoped>
-/* Colors */
-$black: black;
-$orange-1: rgb(255, 115, 0);
-$orange-2: rgb(255, 136, 0);
-.hero {
+.introScreen {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,90 +76,44 @@ $orange-2: rgb(255, 136, 0);
   height: 100vh;
   position: fixed;
   top: 0;
-  &.bg-black {
+  transition: opacity 0.3s;
+  &.bg-image {
+    background-image: url("/introbg.jpg"),
+      radial-gradient(circle at 40% 40%, transparent, black);
+    background-size: cover;
+    background-position: top center;
     background-color: black;
-
-    .name {
-      color: white;
-    }
   }
 
-  &.finished {
-    background-color: transparent;
-    transition: background-color 1s;
+  &.fade-out {
+    opacity: 0;
   }
 }
-.name {
+.word {
   font-family: "Poppins", sans-serif;
   position: relative;
-  color: $black;
+  font-weight: 300;
   text-align: left;
+  color: white;
   font-size: 10vw;
-  font-weight: 600;
   user-select: none;
 }
-.name::before,
-.name::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.name::before {
-  left: 2px;
-  clip: rect(79px, 1200px, 86px, 0);
-  text-shadow: -2px 0 $orange-1;
-  animation: name-anim-2 1s infinite linear alternate-reverse;
-}
-.name::after {
-  /* variation */
-  left: -2px;
-  clip: rect(79px, 1200px, 86px, 0);
-  text-shadow: -1px 0 $orange-2;
-  animation: name-anim-1 1s infinite linear alternate-reverse;
-  animation-delay: -1s;
-}
 
-@keyframes name-anim-1 {
-  0% {
-    clip: rect(20px, 1200px, 76px, 0);
-  }
-  20% {
-    clip: rect(19px, 1200px, 16px, 0);
-  }
-  40% {
-    clip: rect(16px, 1200px, 3px, 0);
-  }
-  60% {
-    clip: rect(62px, 1200px, 78px, 0);
-  }
-  80% {
-    clip: rect(25px, 1200px, 13px, 0);
-  }
-  100% {
-    clip: rect(53px, 1200px, 86px, 0);
-  }
-}
-@keyframes name-anim-2 {
-  0% {
-    clip: rect(79px, 1200px, 126px, 0);
-  }
-  20% {
-    clip: rect(20px, 1200px, 30px, 0);
-  }
-  40% {
-    clip: rect(25px, 1200px, 5px, 0);
-  }
-  60% {
-    clip: rect(65px, 1200px, 85px, 0);
-  }
-  80% {
-    clip: rect(120px, 1200px, 145px, 0);
-  }
-  100% {
-    clip: rect(95px, 1200px, 75px, 0);
-  }
+.mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  mask: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    transparent 1px,
+    black 550px
+  );
+  -webkit-mask: radial-gradient(
+    circle at var(--mouse-x) var(--mouse-y),
+    transparent 1px,
+    black 550px
+  );
 }
 </style>
