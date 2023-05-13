@@ -112,15 +112,16 @@ onMounted(() => {
   background-color: black;
   --mouse-x: 50%;
   --mouse-y: 50%;
+
   mask: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
     transparent 1px,
-    black 550px
+    black 750px
   );
   -webkit-mask: radial-gradient(
     circle at var(--mouse-x) var(--mouse-y),
     transparent 1px,
-    black 550px
+    black 750px
   );
 }
 </style>

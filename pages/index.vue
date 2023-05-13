@@ -23,7 +23,10 @@ watch(introLoaded, () => {
     />
 
     <div class="hero-content">
-      <h1 class="fade">Hello, I'm Alessio</h1>
+      <h1 class="fade">
+        Hi there! <br />
+        I'm Alessio
+      </h1>
       <h2 class="fade">Senior Frontend Developer based in London - UK</h2>
       <p class="fade">
         Born and raised in Salento, Italy. I moved to London in 2015 right after my
@@ -40,7 +43,7 @@ watch(introLoaded, () => {
         Tesco PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, Elite Traveler and
         more
       </p>
-      <p class="fade">Technology I use</p>
+      <p class="fade">Tech stack</p>
       <TechStack />
     </div>
   </div>
