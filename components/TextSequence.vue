@@ -97,6 +97,11 @@ onMounted(() => {
   color: white;
   font-size: 10vw;
   user-select: none;
+
+  @media (max-width: 768px) {
+    font-size: 12vw;
+    font-weight: 600;
+  }
 }
 
 .mask {
