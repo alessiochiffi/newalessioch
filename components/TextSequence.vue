@@ -62,7 +62,9 @@ function mouseEffect() {
 }
 
 onMounted(() => {
-  runAnimation();
+  setTimeout(() => {
+    runAnimation();
+  }, 1000);
   mouseEffect();
 });
 </script>
