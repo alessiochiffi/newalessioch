@@ -2,6 +2,7 @@
   <div :class="['content', { visible: ui.introLoaded }]">
     <Nav />
     <slot />
+    <TheExperience />
     <Footer />
   </div>
 </template>
