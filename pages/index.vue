@@ -29,19 +29,18 @@ watch(introLoaded, () => {
       </h1>
       <h2 class="fade">Senior Frontend Developer based in London - UK</h2>
       <p class="fade">
-        Born and raised in Salento, Italy. I moved to London in 2015 right after my
-        graduation in Business Communication at La Sapienza University of Rome.
+        Born and raised in Salento, Italy. I moved to London in 2015 right after
+        completing my degree in Business Communication at La Sapienza University of Rome.
       </p>
       <p class="fade">
-        I wrote my first line of code in 2012, while I was working on a University tech
-        project. Since then, my passion for coding and front end development has never
-        stopped.
+        I started my journey as a Frontend Developer back in 2012 during my university
+        days when I worked on a tech project. Since then, I've been steadily working in
+        frontend web development, gaining more than 7 years of commercial experience.
       </p>
       <p class="fade">
-        More than 6 years of commercial experience. I had the pleasure to work for clients
-        like Finisterre, Arcelormittal, Safaricom, David Beckham Eyewear, Union Coffee,
-        Tesco PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, Elite Traveler and
-        more
+        My work has had me collaborating with a variety of clients, including branks like
+        Finisterre, Arcelormittal, Safaricom, David Beckham Eyewear, Union Coffee, Tesco
+        PLC, GSK, Bluebella, Lauren Conrad Beauty, New Statesman, and Elite Traveler.
       </p>
       <p class="fade">Tech stack</p>
       <TechStack />
