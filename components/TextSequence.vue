@@ -1,15 +1,11 @@
 <template>
-  <div
-    v-if="active"
-    ref="introScreen"
-    class="introScreen"
-    :class="{ 'bg-image': !finished }"
-  >
+  <div v-if="active" ref="introScreen" class="introScreen">
     <div class="word" :data-text="term">
       {{ term }}
     </div>
   </div>
-  <div v-if="!finished" ref="mask" class="mask"></div>
+  <TheExperience />
+  <!-- <div v-if="!finished" ref="mask" class="mask"></div> -->
 </template>
 
 <script setup lang="ts">
@@ -24,7 +20,6 @@ const term = ref<String>("🚀") as any;
 const count = ref<Number>(0);
 const finished = ref<Boolean>(false);
 const active = ref<Boolean>(true);
-const mask = ref<HTMLElement>();
 const introScreen = ref<HTMLElement>();
 
 function fadeOutIntroScreen() {
@@ -49,23 +44,10 @@ function runAnimation() {
   }, 300);
 }
 
-function mouseEffect() {
-  document.addEventListener("pointermove", (pos: PointerEvent) => {
-    if (!mask.value) return;
-
-    let x = ((pos.clientX / window.innerWidth) * 100).toFixed(0);
-    let y = ((pos.clientY / window.innerHeight) * 100).toFixed(0);
-
-    mask.value.style.setProperty("--mouse-x", x + "%");
-    mask.value.style.setProperty("--mouse-y", y + "%");
-  });
-}
-
 onMounted(() => {
   setTimeout(() => {
     runAnimation();
   }, 1000);
-  mouseEffect();
 });
 </script>
 
@@ -96,7 +78,7 @@ onMounted(() => {
   position: relative;
   font-weight: 300;
   text-align: left;
-  color: white;
+  color: black;
   font-size: 10vw;
   user-select: none;
 
@@ -104,24 +86,5 @@ onMounted(() => {
     font-size: 12vw;
     font-weight: 600;
   }
-}
-
-.mask {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  --mouse-x: 50%;
-  --mouse-y: 50%;
-
-  mask: radial-gradient(
-    circle at var(--mouse-x) var(--mouse-y),
-    transparent 1px,
-    black 750px
-  );
-  -webkit-mask: radial-gradient(
-    circle at var(--mouse-x) var(--mouse-y),
-    transparent 1px,
-    black 750px
-  );
 }
 </style>

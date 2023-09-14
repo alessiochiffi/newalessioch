@@ -8,6 +8,9 @@ useHead({
       href: "/logo.png",
     },
   ],
+  link: {
+    href: "https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js",
+  },
 });
 </script>
 
