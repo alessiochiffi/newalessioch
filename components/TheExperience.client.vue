@@ -61,8 +61,8 @@ function init() {
   animProps = { scale: 1, xRot: 0, yRot: 0 };
 
   gsap.to(animProps, {
-    duration: 10,
-    scale: 1.3,
+    duration: 3,
+    scale: 1.1,
     repeat: -1,
     yoyo: true,
     ease: "sine",
@@ -96,6 +96,18 @@ function init() {
   }
 
   document.addEventListener("mousemove", onMouseMove, false);
+
+  // trigger animation on mobile on phone movement
+  window.addEventListener("devicemotion", function (event) {
+    if (myTween) myTween.kill();
+    mouseX = (event.accelerationIncludingGravity.x / window.innerWidth) * 2 - 1;
+    mouseY = -(event.accelerationIncludingGravity.y / window.innerHeight) * 2 + 1;
+    myTween = gsap.to(particles.rotation, {
+      duration: 0.1,
+      x: mouseY * -1,
+      y: mouseX,
+    });
+  });
 
   // Resize event
   window.addEventListener("resize", function () {
@@ -139,8 +151,8 @@ onMounted(() => {
     @media (max-width: 768px) {
       right: 0;
       left: 0;
-      top: 90%;
-      bottom: 10%;
+      top: auto;
+      bottom: 30%;
     }
 
     @media (min-width: 768px) {
@@ -163,8 +175,8 @@ canvas {
     @media (max-width: 768px) {
       right: 0;
       left: 0;
-      top: 60%;
-      // bottom: 10%;
+      opacity: 0.5;
+      top: 55%;
     }
 
     @media (min-width: 768px) {

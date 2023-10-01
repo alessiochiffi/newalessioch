@@ -64,6 +64,10 @@ watch(introLoaded, () => {
   margin: 150px auto 0;
   padding: 0 15px;
   text-align: left;
+
+  @media (min-width: 1600px) {
+    max-width: 1000px;
+  }
 }
 
 h1 {
@@ -73,6 +77,10 @@ h1 {
 
   @media (max-width: 600px) {
     font-size: 13vw;
+  }
+
+  @media (min-width: 1600px) {
+    font-size: 7vw;
   }
 }
 
