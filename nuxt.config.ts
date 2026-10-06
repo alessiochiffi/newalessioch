@@ -1,5 +1,6 @@
 const siteUrl = 'https://www.alessioch.com'
 const siteTitle = 'Alessio Chiffi - Senior Frontend Engineer in London'
+const gtagId = 'G-1JQWSK25MF'
 const siteDescription = 'Alessio Chiffi is a Senior Frontend Engineer based in London, building fast websites and web apps with JavaScript, TypeScript, Vue, Nuxt and React. Currently at Radley Yeldar.'
 
 export default defineNuxtConfig({
@@ -45,6 +46,13 @@ export default defineNuxtConfig({
         },
       ],
       script: [
+        {
+          src: `https://www.googletagmanager.com/gtag/js?id=${gtagId}`,
+          async: true,
+        },
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${gtagId}');`,
+        },
         {
           type: 'application/ld+json',
           innerHTML: JSON.stringify({
