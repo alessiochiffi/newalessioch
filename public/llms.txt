@@ -1,12 +1,12 @@
 # Alessio Chiffi
 
-> Senior Frontend Developer based in London, UK. Builds fast websites and web apps with JavaScript and TypeScript, working across Vue, Nuxt and React. Currently at Radley Yeldar.
+> Senior Frontend Engineer based in London, UK. Builds fast websites and web apps with JavaScript and TypeScript, working across Vue, Nuxt and React. Currently at Radley Yeldar.
 
 This is the personal site of Alessio Chiffi. It is a single page; everything on it is summarised below.
 
 ## About
 
-- Role: Senior Frontend Developer
+- Role: Senior Frontend Engineer
 - Location: London, UK (since 2015). Originally from Salento, southern Italy.
 - Building for the web since 2017.
 - Education: Business Communication, La Sapienza University of Rome.

@@ -24,9 +24,9 @@ watch(introLoaded, () => {
         Hi there, <br />
         I'm Alessio
       </h1>
-      <h2 class="fade">Senior Frontend Developer based in London</h2>
+      <h2 class="fade">Senior Frontend Engineer based in London</h2>
       <p class="fade">
-        I’m a frontend developer who cares about making the web fast, thoughtful and
+        I’m a frontend engineer who cares about making the web fast, thoughtful and
         enjoyable to use.
       </p>
       <p class="fade">
