@@ -14,7 +14,7 @@ const { introLoaded } = useIntro();
 const { width, height } = useWindowSize();
 const reducedMotion = usePreferredReducedMotion();
 const pointer = { x: 0, y: 0 };
-const sphere = { x: 0, y: 0, scale: 1 };
+const sphere = { scale: 1 };
 const uniforms = {
   uTime: { value: 0 },
   uProgress: { value: 0 },
@@ -67,33 +67,21 @@ function buildGeometry() {
   geometry.setAttribute("aRandom", new THREE.BufferAttribute(randoms, 1));
 }
 
-function getViewSize() {
+function getFitScale() {
   const viewHeight =
     2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) * camera.position.z;
 
-  return { viewWidth: viewHeight * camera.aspect, viewHeight };
-}
-
-function getFitScale() {
-  return Math.min(1.2, getViewSize().viewWidth / 2.9);
+  return Math.min(1.2, (viewHeight * camera.aspect) / 2.9);
 }
 
 function dissolve() {
-  const { viewWidth, viewHeight } = getViewSize();
-
   gsap.to(sphere, {
     scale: 0,
-    duration: 2.5,
+    duration: 1.5,
     ease: "power1.in",
     onComplete: pause,
   });
-  gsap.to(sphere, {
-    x: viewWidth / 2 - 0.3,
-    y: viewHeight / 2 - 0.3,
-    duration: 2.5,
-    ease: "power1.inOut",
-  });
-  gsap.to(uniforms.uDissolve, { value: 1, duration: 1.5, ease: "none" });
+  gsap.to(uniforms.uDissolve, { value: 1, duration: 1, ease: "none" });
 }
 
 function resize() {
@@ -126,7 +114,6 @@ function render({ delta }: { delta: number }) {
   points.rotation.y = spin + window.scrollY * 0.0015;
   tilt.rotation.x += (pointer.y * 0.35 - tilt.rotation.x) * damping;
   tilt.rotation.y += (pointer.x * 0.5 - tilt.rotation.y) * damping;
-  tilt.position.set(sphere.x, sphere.y, 0);
   tilt.scale.setScalar(sphere.scale);
 
   renderer.render(scene, camera);

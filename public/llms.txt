@@ -13,7 +13,7 @@ This is the personal site of Alessio Chiffi. It is a single page; everything on 
 
 ## Current work
 
-At Radley Yeldar, Alessio built the Nuxt frontend the team works with and integrated it with Umbraco CMS. He is also responsible for performance, Core Web Vitals and the CI pipeline.
+Alessio currently works at Radley Yeldar, where he builds and maintains the Nuxt frontend the team works with, including its integration with Umbraco CMS. He is also responsible for performance, Core Web Vitals and the CI pipeline.
 
 ## AI
 

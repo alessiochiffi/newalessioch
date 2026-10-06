@@ -2,14 +2,13 @@
 import gsap from "gsap";
 
 const { introLoaded } = useIntro();
-const tl = gsap.timeline();
 
 watch(introLoaded, () => {
-  tl.to(".fade", {
-    y: 0,
-    opacity: 1,
-    stagger: 0.1,
-  });
+  gsap.fromTo(
+    ".fade",
+    { y: 20, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1 }
+  );
 });
 </script>
 
@@ -30,11 +29,11 @@ watch(introLoaded, () => {
       </p>
       <p class="fade">
         I work mainly with JavaScript and TypeScript, building websites and web apps with
-        Vue, Nuxt and React. At Radley Yeldar, I built the Nuxt frontend our team works
-        with and integrated it with Umbraco CMS. I’m also responsible for performance,
-        Core Web Vitals and our CI pipeline, areas I’ve become increasingly interested in
-        because I believe that good frontend work is about more than just getting a page
-        to render.
+        Vue, Nuxt and React. I currently work at Radley Yeldar, where I build and
+        maintain the Nuxt frontend our team works with, including its integration with
+        Umbraco CMS. I’m also responsible for performance, Core Web Vitals and our CI
+        pipeline, areas I’ve become increasingly interested in because I believe that
+        good frontend work is about more than just getting a page to render.
       </p>
       <p class="fade">
         I’ve been building for the web since 2017, long before AI became part of the
@@ -54,7 +53,7 @@ watch(introLoaded, () => {
         2015, when I moved here after studying Business Communication at La Sapienza in
         Rome.
       </p>
-      <h3 class="fade">What I work with</h3>
+      <h3 class="fade">Tech stack and tools</h3>
       <TechStack />
     </div>
   </div>
