@@ -26,8 +26,7 @@ watch(introLoaded, () => {
       </h1>
       <h2 class="fade">Senior Frontend Engineer based in London</h2>
       <p class="fade">
-        I’m a frontend engineer who cares about making the web fast, thoughtful and
-        enjoyable to use.
+        I care about building fast, accessible and well-crafted experiences for the web.
       </p>
       <p class="fade">
         I work mainly with JavaScript and TypeScript, building websites and web apps with
