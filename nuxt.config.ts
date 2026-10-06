@@ -1,7 +1,7 @@
 const siteUrl = 'https://www.alessioch.com'
-const siteTitle = 'Alessio Chiffi - Senior Frontend Engineer in London'
+const siteTitle = 'Alessio Chiffi - Senior Frontend Engineer based in London'
 const gtagId = 'G-1JQWSK25MF'
-const siteDescription = 'Alessio Chiffi is a Senior Frontend Engineer based in London, building fast websites and web apps with JavaScript, TypeScript, Vue, Nuxt and React. Currently at Radley Yeldar.'
+const siteDescription = 'Senior Frontend Engineer based in London. I build fast, accessible and well-crafted experiences for the web with TypeScript, Vue, Nuxt and React. Currently at Radley Yeldar.'
 
 export default defineNuxtConfig({
   compatibilityDate: '2026-10-06',
