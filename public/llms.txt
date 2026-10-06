@@ -32,4 +32,4 @@ JavaScript, TypeScript, Vue, Nuxt, React, Umbraco, Google Gemini, Sass, CSS, HTM
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/alessiochiffi/)
-- [Website](https://alessioch.com/)
+- [Website](https://www.alessioch.com/)

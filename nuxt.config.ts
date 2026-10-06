@@ -1,4 +1,4 @@
-const siteUrl = 'https://alessioch.com'
+const siteUrl = 'https://www.alessioch.com'
 const siteTitle = 'Alessio Chiffi - Senior Frontend Developer in London'
 const siteDescription = 'Alessio Chiffi is a Senior Frontend Developer based in London, building fast websites and web apps with JavaScript, TypeScript, Vue, Nuxt and React. Currently at Radley Yeldar.'
 
@@ -32,7 +32,8 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/png',
-          href: '/logo.png',
+          sizes: '96x96',
+          href: '/favicon.png',
         },
         { rel: 'canonical', href: siteUrl },
         {
