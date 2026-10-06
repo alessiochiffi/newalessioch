@@ -1,0 +1,35 @@
+# Alessio Chiffi
+
+> Senior Frontend Developer based in London, UK. Builds fast websites and web apps with JavaScript and TypeScript, working across Vue, Nuxt and React. Currently at Radley Yeldar.
+
+This is the personal site of Alessio Chiffi. It is a single page; everything on it is summarised below.
+
+## About
+
+- Role: Senior Frontend Developer
+- Location: London, UK (since 2015). Originally from Salento, southern Italy.
+- Building for the web since 2017.
+- Education: Business Communication, La Sapienza University of Rome.
+
+## Current work
+
+At Radley Yeldar, Alessio built the Nuxt frontend the team works with and integrated it with Umbraco CMS. He is also responsible for performance, Core Web Vitals and the CI pipeline.
+
+## AI
+
+Alessio uses tools like Claude as part of his daily workflow, alongside fundamentals developed over years of writing and maintaining production code. He has also built with the AI SDK and Google Gemini.
+
+- [Grammaco](https://grammaco.alessioch.com/): a grammar checker powered by Google Gemini, built by Alessio.
+
+## Organisations worked with
+
+Finisterre, ArcelorMittal, Safaricom, Tesco, GSK, Bluebella, New Statesman.
+
+## Skills
+
+JavaScript, TypeScript, Vue, Nuxt, React, Umbraco, Google Gemini, Sass, CSS, HTML, GSAP, Cypress, Vite, Git, ESLint, Webpack, VS Code, Bitbucket, Figma, Shopify.
+
+## Contact
+
+- [LinkedIn](https://www.linkedin.com/in/alessiochiffi/)
+- [Website](https://alessioch.com/)

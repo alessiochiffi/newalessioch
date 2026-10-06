@@ -1,14 +1,14 @@
 <template>
   <header>
-    <a href="/" class="logo fade">
+    <NuxtLink to="/" class="logo fade">
       <img
         src="/logo.webp"
-        alt="logo alesioch.com"
+        alt="alessioch.com logo"
         width="111"
         height="111"
         loading="lazy"
       />
-    </a>
+    </NuxtLink>
   </header>
 </template>
 

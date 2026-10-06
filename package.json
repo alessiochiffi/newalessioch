@@ -1,6 +1,5 @@
 {
   "private": true,
-  "packageManager": "npm",
   "scripts": {
     "build": "nuxi build",
     "dev": "nuxi dev",
@@ -10,28 +9,18 @@
     "generate": "nuxi generate"
   },
   "devDependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@antfu/eslint-config": "^0.27.0",
-    "@averjs/nuxt-compression": "^1.2.2",
-    "@iconify-json/carbon": "^1.1.8",
-    "@iconify-json/twemoji": "^1.1.5",
-    "@nuxtjs/color-mode": "^3.1.6",
-    "@pinia/nuxt": "^0.4.2",
-    "@vueuse/nuxt": "^9.3.0",
+    "@nuxt/fonts": "^0.14.0",
+    "@types/three": "^0.186.0",
+    "@vueuse/nuxt": "^15.0.0",
     "eslint": "^8.24.0",
-    "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^10.0.1",
-    "nuxt": "^3.0.0-rc.11",
-    "nuxt-compress": "^5.0.0",
-    "pinia": "^2.0.22",
-    "typescript": "^4.8.3"
+    "nuxt": "^4.5.2",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "gsap": "^3.11.2",
-    "remove": "^0.1.5",
-    "sass": "^1.55.0",
-    "three": "^0.154.0",
-    "vanilla-tilt": "^1.7.2",
+    "sass": "^1.105.1",
+    "three": "^0.186.1",
     "vue-gtag": "^2.0.1"
   }
 }

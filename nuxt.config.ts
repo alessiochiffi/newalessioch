@@ -1,26 +1,105 @@
-import { defineNuxtConfig } from 'nuxt/config'
+const siteUrl = 'https://alessioch.com'
+const siteTitle = 'Alessio Chiffi - Senior Frontend Developer in London'
+const siteDescription = 'Alessio Chiffi is a Senior Frontend Developer based in London, building fast websites and web apps with JavaScript, TypeScript, Vue, Nuxt and React. Currently at Radley Yeldar.'
 
 export default defineNuxtConfig({
-  ssr: true,
-  target: "static",
+  compatibilityDate: '2026-10-06',
   modules: [
     '@vueuse/nuxt',
-    '@pinia/nuxt',
+    '@nuxt/fonts',
   ],
+  app: {
+    head: {
+      title: siteTitle,
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        { name: 'description', content: siteDescription },
+        { name: 'author', content: 'Alessio Chiffi' },
+        { property: 'og:type', content: 'profile' },
+        { property: 'og:site_name', content: 'alessioch.com' },
+        { property: 'og:title', content: siteTitle },
+        { property: 'og:description', content: siteDescription },
+        { property: 'og:url', content: siteUrl },
+        { property: 'og:image', content: `${siteUrl}/logo.png` },
+        { name: 'twitter:card', content: 'summary' },
+        { name: 'twitter:title', content: siteTitle },
+        { name: 'twitter:description', content: siteDescription },
+        { name: 'twitter:image', content: `${siteUrl}/logo.png` },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/logo.png',
+        },
+        { rel: 'canonical', href: siteUrl },
+        {
+          rel: 'alternate',
+          type: 'text/markdown',
+          title: 'LLM-friendly summary',
+          href: '/llms.txt',
+        },
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            'name': 'Alessio Chiffi',
+            'url': siteUrl,
+            'image': `${siteUrl}/logo.png`,
+            'jobTitle': 'Senior Frontend Developer',
+            'description': siteDescription,
+            'worksFor': {
+              '@type': 'Organization',
+              'name': 'Radley Yeldar',
+            },
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'London',
+              'addressCountry': 'GB',
+            },
+            'alumniOf': {
+              '@type': 'CollegeOrUniversity',
+              'name': 'Sapienza University of Rome',
+            },
+            'knowsAbout': [
+              'JavaScript',
+              'TypeScript',
+              'Vue',
+              'Nuxt',
+              'React',
+              'Umbraco CMS',
+              'Web performance',
+              'Core Web Vitals',
+              'Continuous integration',
+              'AI SDK',
+              'Google Gemini',
+            ],
+            'sameAs': [
+              'https://www.linkedin.com/in/alessiochiffi/',
+            ],
+          }),
+        },
+      ],
+    },
+  },
+  components: [
+    '~/components',
+    { path: '~/icons', global: true },
+  ],
+  fonts: {
+    families: [
+      { name: 'Poppins', provider: 'google', weights: [300, 400, 600] },
+    ],
+  },
   nitro: {
     compressPublicAssets: true,
   },
-  components: {
-    global: true,
-    dirs: ['~/components', '~/icons']
-  },
-  experimental: {
-    reactivityTransform: true,
-  },
   build: {
-    transpile: [
-      'gsap',
-      'vanilla-tilt'
-    ],
-  }
+    transpile: ['gsap'],
+  },
 })
