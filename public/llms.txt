@@ -27,7 +27,7 @@ Finisterre, ArcelorMittal, Safaricom, Tesco, GSK, Bluebella, New Statesman.
 
 ## Skills
 
-JavaScript, TypeScript, Vue, Nuxt, React, Umbraco, Google Gemini, Sass, CSS, HTML, GSAP, Cypress, Vite, Git, ESLint, Webpack, VS Code, Bitbucket, Figma, Shopify.
+JavaScript, TypeScript, Vue, Nuxt, React, Pinia, Umbraco, Claude, Google Gemini, AI SDK, GitHub Copilot, Sass, CSS, HTML, GSAP, Vite, Cypress, ESLint, Git, Azure DevOps, Bitbucket, VS Code, Figma, Shopify.
 
 ## Contact
 

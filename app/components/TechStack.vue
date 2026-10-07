@@ -1,16 +1,8 @@
 <template>
-  <div
-    :class="['tech-stack', { 'is-ready': introLoaded, 'is-active': selected !== '' }]"
-  >
-    <span class="tech-stack__selected" aria-hidden="true">{{ selected }}</span>
-    <ul>
+  <div class="tech-stack">
+    <ul ref="list">
       <li v-for="item in tech" :key="item.icon">
-        <component
-          :is="'icon-' + item.icon"
-          aria-hidden="true"
-          @mouseenter="onMouseEnter(item.icon)"
-          @mouseleave="onMouseLeave()"
-        ></component>
+        <component :is="'icon-' + item.icon" aria-hidden="true"></component>
         <span class="tech-stack__name">{{ item.name }}</span>
       </li>
     </ul>
@@ -18,108 +10,106 @@
 </template>
 
 <script setup lang="ts">
-const selected = ref<String>("");
+import gsap from "gsap";
 
+const list = ref<HTMLElement>();
 const { introLoaded } = useIntro();
-
+const isVisible = useElementVisibility(list, { rootMargin: "0px 0px -100px 0px" });
 const tech = [
   { icon: "Js", name: "JavaScript" },
   { icon: "TS", name: "TypeScript" },
   { icon: "Vue", name: "Vue" },
   { icon: "Nuxt", name: "Nuxt" },
   { icon: "React", name: "React" },
+  { icon: "Pinia", name: "Pinia" },
   { icon: "Umbraco", name: "Umbraco" },
+  { icon: "Claude", name: "Claude" },
   { icon: "Gemini", name: "Google Gemini" },
+  { icon: "AiSdk", name: "AI SDK" },
+  { icon: "Copilot", name: "GitHub Copilot" },
   { icon: "Sass", name: "Sass" },
   { icon: "CSS", name: "CSS" },
   { icon: "HTML", name: "HTML" },
   { icon: "Gsap", name: "GSAP" },
-  { icon: "Cypress", name: "Cypress" },
   { icon: "Vite", name: "Vite" },
-  { icon: "Git", name: "Git" },
+  { icon: "Cypress", name: "Cypress" },
   { icon: "EsLint", name: "ESLint" },
-  { icon: "Webpack", name: "Webpack" },
-  { icon: "VsCode", name: "VS Code" },
+  { icon: "Git", name: "Git" },
+  { icon: "AzureDevOps", name: "Azure DevOps" },
   { icon: "Bitbucket", name: "Bitbucket" },
+  { icon: "VsCode", name: "VS Code" },
   { icon: "Figma", name: "Figma" },
   { icon: "Shopify", name: "Shopify" },
 ];
+let revealed = false;
 
-function onMouseEnter(item: String) {
-  selected.value = item;
+function reveal() {
+  if (revealed || !list.value) return;
+
+  revealed = true;
+  gsap.fromTo(
+    list.value.children,
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.5, stagger: 0.05, ease: "power2.out" }
+  );
 }
-function onMouseLeave() {
-  selected.value = "";
-}
+
+watch([isVisible, introLoaded], ([visible, loaded]) => {
+  if (visible && loaded) reveal();
+});
 </script>
 
 <style lang="scss">
 .tech-stack {
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.6s;
-
-  &.is-ready {
-    opacity: 1;
-  }
-
-  &__name {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
+  align-self: center;
+  width: min(1200px, calc(100vw - 30px));
 
   ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 10px;
     list-style: none;
+    margin: 60px 0 40px;
     padding: 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
   }
 
   li {
-    width: 200px;
-    margin: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 14px;
+    padding: 28px 10px;
+    opacity: 0;
 
     @media (max-width: 600px) {
-      width: 50%;
-      margin: 20px 0;
-      font-size: 14px;
+      padding: 18px 4px;
     }
   }
 
   svg {
-    max-width: 80px;
-    padding: 10px 0 20px;
-    height: 80px;
+    width: 76px;
+    height: 76px;
+    transition: transform 0.2s ease;
 
     @media (max-width: 600px) {
-      padding-bottom: 10px;
+      width: 54px;
+      height: 54px;
     }
   }
 
-  &__selected {
-    align-items: center;
-    display: flex;
-    font-size: 20vw;
-    height: 100vh;
-    justify-content: center;
-    left: 0;
-    opacity: 0;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 100vw;
-    z-index: -1;
+  &__name {
+    font-size: 14px;
+    text-align: center;
+  }
 
-    .is-active & {
-      opacity: 1;
+  @media (hover: hover) {
+    li:hover svg {
+      transform: translateY(-6px) scale(1.08);
     }
   }
 }
