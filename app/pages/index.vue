@@ -2,6 +2,7 @@
 import gsap from "gsap";
 
 const { introLoaded } = useIntro();
+const experienceYears = new Date().getFullYear() - 2017;
 
 watch(introLoaded, () => {
   gsap.fromTo(
@@ -24,29 +25,27 @@ watch(introLoaded, () => {
         I'm Alessio
       </h1>
       <h2 class="fade">Senior Frontend Engineer based in London</h2>
-      <p class="fade">
-        I build fast, accessible and well-crafted experiences for the web.
-      </p>
+      <p class="fade">I build fast, accessible and well-crafted projects for the web.</p>
       <p class="fade">
         I work mainly with JavaScript and TypeScript, building websites and web apps with
-        Vue, Nuxt and React. I currently work at Radley Yeldar, where I build and
-        maintain the Nuxt frontend our team works with, including its integration with
-        Umbraco CMS. I’m also responsible for performance, Core Web Vitals and our CI
-        pipeline, areas I’ve become increasingly interested in because I believe that
-        good frontend work is about more than just getting a page to render.
+        Vue, Nuxt and React. I currently work at Radley Yeldar, where I build and maintain
+        the Nuxt frontend our team works with, including its integration with Umbraco CMS.
+        I’m also responsible for performance, Core Web Vitals and our CI pipeline, areas
+        I’ve become increasingly interested in because I believe that good frontend work
+        is about more than just rendering a page.
       </p>
       <p class="fade">
-        I’ve been building for the web since 2017, long before AI became part of the
-        everyday development workflow. Today, I use tools like Claude as part of how I
-        work, alongside the fundamentals I’ve developed over years of writing and
-        maintaining production code. I’m also interested in building with AI itself, and
-        have worked with the AI SDK and Google Gemini. I built
-        <a href="https://grammaco.alessioch.com/">Grammaco</a>, a grammar checker powered
-        by Gemini, as one example.
+        Over {{ experienceYears }}+ years of experience. I’ve been building for the web
+        since 2017, long before AI became part of the everyday development workflow.
+        Today, I use tools like Claude as part of how I work, alongside the fundamentals
+        I’ve developed over years of writing and maintaining production code. I’m also
+        interested in building with AI itself, and have worked with the AI SDK and Google
+        Gemini. I built <a href="https://grammaco.alessioch.com/">Grammaco</a>, a grammar
+        checker powered by Gemini, as one example.
       </p>
       <p class="fade">
         Over the last decade, I’ve worked with organisations including Finisterre,
-        ArcelorMittal, Safaricom, Tesco, GSK, Bluebella and New Statesman.
+        ArcelorMittal, Safaricom, Tesco, GSK, CIL, Bluebella, New Statesman and more.
       </p>
       <p class="fade">
         I’m originally from Salento in southern Italy and have called London home since
